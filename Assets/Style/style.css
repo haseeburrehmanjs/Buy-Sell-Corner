@@ -1,7 +1,15 @@
+:root {
+    --primary-color : #4C68FF;
+}
+
+body a {
+    text-decoration: none;
+}
+
 .main-navbar {
     width: 100%;
     height: 60px;
-    background-color: #4C68FF;
+    background-color: var(--primary-color);
 }
 
 .login-section {
@@ -22,6 +30,16 @@
     border-radius: 5px;
     padding-left: 10px;
     border: 1px solid rgb(237, 237, 237);
+    outline: none;
+}
+
+#myfile::file-selector-button {
+    width: 150px;
+    height: 46px;
+    padding-right: 10px;
+    background-color: var(--primary-color);
+    color: #ffffff;
+    border: none;
     outline: none;
 }
 
