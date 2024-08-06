@@ -1,5 +1,6 @@
 :root {
-    --primary-color : #4C68FF;
+    --primary-color: #4C68FF;
+    --secondry: #FFF6F6;
 }
 
 body a {
@@ -16,7 +17,8 @@ body a {
     width: 400px;
     padding: 20px;
     background-color: #FFFCFC;
-    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    ;
     border-radius: 30px;
     position: absolute;
     top: 50%;
@@ -45,4 +47,59 @@ body a {
 
 .login-btn buttonn {
     width: 150px;
+}
+
+.green::placeholder {
+    color: rgb(2, 181, 2);
+}
+
+.nav-content img {
+    width: 40px;
+    border-radius: 30px;
+}
+
+.bg-color {
+    width: 100%;
+    height: 100vh;
+    background-color: var(--secondry);
+}
+
+#search_input input {
+    width: 100%;
+    height: 48px;
+    border: 1px solid rgb(237, 237, 237);
+    font-weight: 100;
+    padding-left: 50px;
+    outline: none;
+}
+
+.search-icon {
+    position: relative;
+    width: 25px;
+    top: 53px;
+    left: 10px;
+    font-size: 20px;
+}
+
+.filter-icon {
+    position: relative;
+    width: 25px;
+    bottom: 38px;
+    left: 1080px;
+}
+
+
+
+
+
+
+
+
+
+
+
+@media only screen and (max-width: 400px) {
+    .bg-color {
+        width: 400px;
+    }
 }
