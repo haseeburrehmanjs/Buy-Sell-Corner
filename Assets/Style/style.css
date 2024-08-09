@@ -88,7 +88,35 @@ body a {
     left: 1080px;
 }
 
+.loading {
+    width: 40px;
+    position: relative;
+    bottom: 6px;
+}
 
+#loginBtn {
+    width: 100px;
+    height: 46px;
+    padding: 10px;
+    background-color: var(--primary-color);
+    border: none;
+}
+
+#loginBtn:hover {
+    background-color: #3957fc;
+}
+
+#registorBtn {
+    width: 100px;
+    height: 46px;
+    padding: 10px;
+    background-color: var(--primary-color);
+    border: none;
+}
+
+#registorBtn:hover {
+    background-color: #3957fc;
+}
 
 
 
