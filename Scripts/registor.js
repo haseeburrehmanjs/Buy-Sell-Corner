@@ -7,7 +7,7 @@ import {
     getStorage
 } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-storage.js";
 
-
+// import from config.js
 import { auth } from "../config.js";
 import { db } from "../config.js";
 
@@ -39,6 +39,18 @@ form.addEventListener('submit', event => {
                 console.log(url);
             }
 
+            Swal.fire({
+                title: 'Success!',
+                text: 'Your account registered successfully!',
+                icon: 'success',
+                confirmButtonText: 'Login'
+            })
+                .then((result) => {
+                    if (result.isConfirmed) {
+                        window.location = "./login.html";
+                    }
+                });
+
             // add data into firestore database
             try {
                 const docRef = await addDoc(collection(db, "users"), {
@@ -52,7 +64,6 @@ form.addEventListener('submit', event => {
             } catch (e) {
                 console.error("Error adding document: ", e);
             }
-            window.location = './login.html'
         })
         .catch((error) => {
             const errorMessage = error.message;
@@ -60,6 +71,7 @@ form.addEventListener('submit', event => {
         });
 })
 
+// img to url convert function
 async function uploadFile(file, userEmail) {
     const storageRef = ref(storage, userEmail);
     try {

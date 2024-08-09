@@ -7,15 +7,27 @@ let email = document.querySelector("#email")
 let password = document.querySelector("#password")
 let loginBtn = document.querySelector("#loginBtn")
 
+// get input value and check user login
 form.addEventListener('submit', event => {
     event.preventDefault()
+    loginBtn.innerHTML = `<img class="loading" src="./Assets/Images/load-37_256.gif" alt="">`
 
+    // sign in function 
     signInWithEmailAndPassword(auth, email.value, password.value)
-        .then((userCredential) => {
-            const user = userCredential.user;
-            loginBtn.innerHTML = `<img class="loading" src="./Assets/Images/load-37_256.gif" alt="">`
-            console.log(user);
-            window.location = './index.html'
+    .then((userCredential) => {
+        const user = userCredential.user;
+        console.log(user);
+        Swal.fire({
+            title: 'Success!',
+            text: 'Your are Login Successfully',
+            icon: 'success',
+            confirmButtonText: 'Login'
+        })
+            .then((result) => {
+                if (result.isConfirmed) {
+                    window.location = './index.html'
+                }
+            });
         })
         .catch((error) => {
             const errorMessage = error.message;
