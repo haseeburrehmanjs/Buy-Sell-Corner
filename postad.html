@@ -43,17 +43,19 @@
                             <img class="uploadFile text-center" src="./Assets/Images/Plus_rectangle.png" alt="">
                         </div>
                         <div class="upload-text">Upload Product Photo</div>
-                        <input id="productImage" type="file">
+                        <input id="productImage" type="file" required>
                     </div>
                     <div class="mt-5 d-flex flex-column gap-4" id="product_input_div">
-                        <input id="product_title" type="text" placeholder="Product Titlle">
-                        <input id="Product_Description" type="text" placeholder="Product Description">
-                        <input id="product_Price" type="text" placeholder="Enter Price">
-                        <input id="UserName" type="text" placeholder="Enter Your Name">
-                        <input id="phone_number" type="text" placeholder="Enter Phone Number">
+                        <input id="product_title" type="text" placeholder="Product Titlle" required>
+                        <input id="Product_Description" type="text" placeholder="Product Description" required>
+                        <input id="product_Price" type="number" placeholder="Enter Price" required>
+                        <input id="UserName" type="text" placeholder="Enter Your Name" required>
+                        <input id="phone_number" type="number" placeholder="Enter Phone Number" required>
                     </div>
-                    <div class="d-flex justify-content-end mt-5">
-                        <button id="postNow_btn" class="btn btn-primary">Post Now</button>
+                    <div id="post_add_div">
+                        <div class="d-flex justify-content-end mt-5">
+                            <button id="postNow_btn" class="btn btn-primary">Post Now</button>
+                        </div>
                     </div>
                 </div>
             </form>
@@ -63,6 +65,9 @@
 
     <!-- javascript link -->
     <script type="module" src="./Scripts/postad.js"></script>
+
+    <!-- SWEETALERT LINK -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.4.10/dist/sweetalert2.all.min.js"></script>
 
     <!-- bootstrap link -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
