@@ -26,6 +26,7 @@ let form = document.querySelector('#form')
 let postNow_btn = document.querySelector('#postNow_btn')
 let uid = null
 
+
 // check user status user login or not
 onAuthStateChanged(auth, async (user) => {
     if (user) {

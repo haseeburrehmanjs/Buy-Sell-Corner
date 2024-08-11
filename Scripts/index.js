@@ -73,21 +73,26 @@ async function renderScreen() {
             console.log(item.data);
             
             card_section.innerHTML += `
-            <div class="card overflow-hidden " style="width: 18rem;">
-                <div class="card text-center">
-                <img src="${item.data.productImage}" class=" card-img-top" alt="...">
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="${item.data.productImage}" alt="${item.data.product_title}">
                 </div>
-                <div class="card-body">
-                    <h5 class="card-title">${item.data.product_title}</h5>
-                    <h5 class="card-title">Rs ${item.data.product_Price}</h5>
-                    <details>
-                    <summary>Description</summary>
-                    <p class="card-text">${item.data.Product_Description}</p>
-                    </details>
-                    <a href="#" class="btn btn-primary">Read More</a>
+                <div class="product-info">
+                    <h2>${item.data.product_title}</h2>
+                    <h2>Contect Seller: ${item.data.phone_number}</h2>
+                    <p class="price"><span>Rs ${item.data.product_Price}</span></p>
+                    <button id="adToCard">Add to cart</button>
                 </div>
             </div>
             `
+
+            let adToCard = document.querySelectorAll('#adToCard')
+
+            adToCard.forEach((btn, index) => {
+                btn.addEventListener('click', ()=> {
+                    alert('this function is comming soon')
+                })
+            })
         })
     
 }
