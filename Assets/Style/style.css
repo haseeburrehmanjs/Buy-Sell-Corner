@@ -176,7 +176,7 @@ body a {
 .product-card {
     background-color: white;
     border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
     width: 300px;
     overflow: hidden;
     transition: transform 0.3s ease;
@@ -242,8 +242,11 @@ body a {
 
 
 
-@media only screen and (max-width: 400px) {
+@media only screen and (max-width: 450px) {
     .bg-color {
         width: 400px;
+    }
+    .login-section {
+        width: 360px;
     }
 }
