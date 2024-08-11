@@ -81,7 +81,7 @@ async function renderScreen() {
                     <h2>${item.data.product_title}</h2>
                     <h2>Contect Seller: ${item.data.phone_number}</h2>
                     <p class="price"><span>Rs ${item.data.product_Price}</span></p>
-                    <button id="adToCard">Add to cart</button>
+                    <button id="adToCard">Read More</button>
                 </div>
             </div>
             `
