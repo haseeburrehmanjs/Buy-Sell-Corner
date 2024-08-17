@@ -7,6 +7,7 @@ let logoutBtn = document.querySelector('#logoutBtn')
 let userIcon = document.querySelector('#userIcon')
 let loginDiv = document.querySelector('#loginDiv')
 let card_section  = document.querySelector('.card_section ')
+let text_silder  = document.querySelector('#text_silder ')
 
 // check user status user login or not
 onAuthStateChanged(auth, async (user) => {
@@ -21,7 +22,7 @@ onAuthStateChanged(auth, async (user) => {
     } else {
         console.log('user is not here');
         loginDiv.innerHTML = `<a href="./login.html"><button class="btn btn-dark">login</button></a>`
-        
+        text_silder.innerHTML =  `<marquee direction="" class="text-danger mt-2">Do you want to ad post first login and then click profile icon</marquee>`
     }
 });
 
