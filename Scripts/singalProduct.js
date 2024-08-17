@@ -53,8 +53,19 @@ onAuthStateChanged(auth, async (user) => {
         });
 
     } else {
-        console.log('user is not here');
-        loginDiv.innerHTML = `<a href="./login.html"><button class="btn btn-dark">login</button></a>`
+        Swal.fire({
+            title: 'Setting!',
+            text: 'Please Login First',
+            confirmButtonText: 'Login',
+            icon: 'error',
+        })
+            .then((result) => {
+                if (result.isConfirmed) {
+                    window.location = '../index.html'
+                }
+            });
+        
+        // loginDiv.innerHTML = `<a href="./login.html"><button class="btn btn-dark">login</button></a>`
     }
 });
 

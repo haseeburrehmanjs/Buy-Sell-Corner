@@ -18,10 +18,10 @@ onAuthStateChanged(auth, async (user) => {
             let data = doc.data()
             userIcon.src = data.photoUrl
         });
-
     } else {
         console.log('user is not here');
         loginDiv.innerHTML = `<a href="./login.html"><button class="btn btn-dark">login</button></a>`
+        
     }
 });
 
@@ -88,7 +88,7 @@ async function renderScreen() {
                 btn.addEventListener('click', ()=> {
                     // console.log(productData[index]);
                     localStorage.setItem('sendlocal', JSON.stringify(productData[index]))
-                    window.location = './singalProduct.html'
+                    window.location = '../singalProduct.html'
                 })
             })
         })
