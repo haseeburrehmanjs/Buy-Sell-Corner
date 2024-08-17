@@ -64,23 +64,20 @@ async function renderScreen() {
     const querySnapshot = await getDocs(collection(db, "product_details"));
     querySnapshot.forEach((doc) => {
         let data = doc.data()
-        productData.push({
-            data
-        })
-        console.log(productData);
+        productData.push(data)
+        // console.log(productData);
     });
         productData.map((item,index) => {
-            console.log(item.data);
-            
+            // console.log(item);
             card_section.innerHTML += `
             <div class="product-card">
                 <div class="product-image">
-                    <img src="${item.data.productImage}" alt="${item.data.product_title}">
+                    <img src="${item.productImage}" alt="${item.product_title}">
                 </div>
                 <div class="product-info">
-                    <h2>${item.data.product_title}</h2>
-                    <h2>Contect Seller: ${item.data.phone_number}</h2>
-                    <p class="price"><span>Rs ${item.data.product_Price}</span></p>
+                    <h2>${item.product_title}</h2>
+                    <h2>Contect Seller: ${item.phone_number}</h2>
+                    <p class="price"><span>Rs ${item.product_Price}</span></p>
                     <button id="adToCard">Read More</button>
                 </div>
             </div>
@@ -90,7 +87,8 @@ async function renderScreen() {
 
             adToCard.forEach((btn, index) => {
                 btn.addEventListener('click', ()=> {
-                    alert('this function is comming soon')
+                    // console.log(productData[index]);
+                    localStorage.setItem('sendlocal', JSON.stringify(productData[index]))
                 })
             })
         })
