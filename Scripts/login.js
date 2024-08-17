@@ -10,11 +10,11 @@ let loginBtn = document.querySelector("#loginBtn")
 // get input value and check user login
 form.addEventListener('submit', event => {
     event.preventDefault()
-    loginBtn.innerHTML = `<img class="loading" src="./Assets/Images/load-37_256.gif" alt="">`
 
     // sign in function 
     signInWithEmailAndPassword(auth, email.value, password.value)
     .then((userCredential) => {
+        loginBtn.innerHTML = `<img class="loading" src="./Assets/Images/load-37_256.gif" alt="">`
         const user = userCredential.user;
         console.log(user);
         Swal.fire({
@@ -31,6 +31,16 @@ form.addEventListener('submit', event => {
         })
         .catch((error) => {
             const errorMessage = error.message;
-            console.log(errorMessage);
+            Swal.fire({
+                title: 'Success!',
+                text: errorMessage,
+                icon: 'error',
+                confirmButtonText: 'try again'
+            })
+                .then((result) => {
+                    if (result.isConfirmed) {
+                        // window.location = './index.html'
+                    }
+                });
         });
 })
