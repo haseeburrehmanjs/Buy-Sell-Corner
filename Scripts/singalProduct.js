@@ -5,8 +5,40 @@ import { auth, db } from "../config.js";
 // use html element in javascript
 let logoutBtn = document.querySelector('#logoutBtn')
 let userIcon = document.querySelector('#userIcon')
-let loginDiv = document.querySelector('#loginDiv')
-let card_section  = document.querySelector('.card_section ')
+let product_title = document.querySelector('#product_title')
+let user_image = document.querySelector('#user_image')
+let phone_number = document.querySelector('#phone_number')
+let userName = document.querySelector('#userName')
+let main_product_head = document.querySelector('#main_product_head')
+let product_image = document.querySelector('#product_image')
+let whatsapp_btn = document.querySelector('#whatsapp_btn')
+
+whatsapp_btn.addEventListener('click', event => {
+    event.preventDefault()
+    Swal.fire({
+        title: 'Setting!',
+        text: 'whatsapp featuer is comming soon',
+        confirmButtonText: 'Close'
+    })
+        .then((result) => {
+            if (result.isConfirmed) {
+                // window.location = './postad.html'
+            }
+        });
+})
+
+let getData = JSON.parse(localStorage.getItem('sendlocal'))
+console.log(getData);
+
+function renderScreen(){
+    product_image.src = getData.productImage
+    product_title.innerHTML = getData.product_title
+    phone_number.innerHTML = getData.phone_number
+    userName.innerHTML = getData.UserName
+    main_product_head.innerHTML = getData.product_title
+}
+renderScreen()
+
 
 // check user status user login or not
 onAuthStateChanged(auth, async (user) => {
@@ -17,6 +49,7 @@ onAuthStateChanged(auth, async (user) => {
         querySnapshot.forEach((doc) => {
             let data = doc.data()
             userIcon.src = data.photoUrl
+            user_image.src = data.photoUrl
         });
 
     } else {
@@ -56,42 +89,3 @@ logoutBtn.addEventListener('click', () => {
         // An error happened.
     });
 })
-
-let productData = [];
-
-async function renderScreen() {
-    const querySnapshot = await getDocs(collection(db, "product_details"));
-    querySnapshot.forEach((doc) => {
-        let data = doc.data()
-        productData.push(data)
-        // console.log(productData);
-    });
-        productData.map((item,index) => {
-            // console.log(item);
-            card_section.innerHTML += `
-            <div class="product-card">
-                <div class="product-image">
-                    <img src="${item.productImage}" alt="${item.product_title}">
-                </div>
-                <div class="product-info">
-                    <h2>${item.product_title}</h2>
-                    <h2>Contect Seller: ${item.phone_number}</h2>
-                    <p class="price"><span>Rs ${item.product_Price}</span></p>
-                    <button id="adToCard">Read More</button>
-                </div>
-            </div>
-            `
-
-            let adToCard = document.querySelectorAll('#adToCard')
-
-            adToCard.forEach((btn, index) => {
-                btn.addEventListener('click', ()=> {
-                    // console.log(productData[index]);
-                    localStorage.setItem('sendlocal', JSON.stringify(productData[index]))
-                    window.location = './singalProduct.html'
-                })
-            })
-        })
-    
-}
-renderScreen()
