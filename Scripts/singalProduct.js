@@ -12,6 +12,8 @@ let userName = document.querySelector('#userName')
 let main_product_head = document.querySelector('#main_product_head')
 let product_image = document.querySelector('#product_image')
 let whatsapp_btn = document.querySelector('#whatsapp_btn')
+let product_price = document.querySelector('#product_price')
+let product_description = document.querySelector('#product_description')
 
 whatsapp_btn.addEventListener('click', event => {
     event.preventDefault()
@@ -36,6 +38,8 @@ function renderScreen(){
     phone_number.innerHTML = getData.phone_number
     userName.innerHTML = getData.UserName
     main_product_head.innerHTML = getData.product_title
+    product_price.innerHTML = getData.product_Price
+    product_description.innerHTML = getData.Product_Description
 }
 renderScreen()
 
@@ -49,7 +53,7 @@ onAuthStateChanged(auth, async (user) => {
         querySnapshot.forEach((doc) => {
             let data = doc.data()
             userIcon.src = data.photoUrl
-            user_image.src = data.photoUrl
+            // user_image.src = data.photoUrl
         });
 
     } else {

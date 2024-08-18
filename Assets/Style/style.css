@@ -255,7 +255,7 @@ body a {
 }
 
 .user_section {
-    width: 100%;
+    width: 180%;
     height: 100px;
     background-color: #007bff;
     padding: 10px;
@@ -279,5 +279,20 @@ body a {
     }
     .login-section {
         width: 360px;
+    }
+    .user_section {
+        width: 130%;
+    }
+    .main_card_box {
+        width: 80%;
+        height: 360px;
+        box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    }
+    .main_card_image {
+        width: 380px;
+        height: 320px;
+        /* background-color: #007bff; */
+        overflow: hidden;
+        box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
     }
 }
