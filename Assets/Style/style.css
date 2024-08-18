@@ -255,7 +255,7 @@ body a {
 }
 
 .user_section {
-    width: 180%;
+    width: 400px;
     height: 100px;
     background-color: #007bff;
     padding: 10px;
@@ -281,7 +281,7 @@ body a {
         width: 360px;
     }
     .user_section {
-        width: 130%;
+        width: 280px;
     }
     .main_card_box {
         width: 80%;
