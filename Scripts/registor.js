@@ -25,12 +25,12 @@ let registorBtn = document.querySelector("#registorBtn")
 // registor user and save data into firestore
 form.addEventListener('submit', event => {
     event.preventDefault()
+    registorBtn.innerHTML = `<img class="loading" src="./Assets/Images/load-37_256.gif" alt="">`
     
     createUserWithEmailAndPassword(auth, email.value, password.value)
     .then(async (userCredential) => {
         const user = userCredential.user;
         console.log(user);
-        registorBtn.innerHTML = `<img class="loading" src="./Assets/Images/load-37_256.gif" alt="">`
 
             let file = myfile.files[0]
             let url = null

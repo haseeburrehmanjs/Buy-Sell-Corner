@@ -13,6 +13,15 @@ body a {
     background-color: var(--primary-color);
 }
 
+#search_input {
+    width: 100%;
+    height: 46px;
+    border-radius: 5px;
+    border: 1px solid rgb(209, 209, 209);
+    outline: none;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+
 .login-section {
     width: 400px;
     padding: 20px;
@@ -66,8 +75,8 @@ body a {
     background-color: var(--secondry);
 }
 
-#search_input input {
-    width: 100%;
+#search_input {
+    width: 83%;
     height: 48px;
     border: 1px solid rgb(237, 237, 237);
     font-weight: 100;
@@ -294,5 +303,12 @@ body a {
         /* background-color: #007bff; */
         overflow: hidden;
         box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    }
+    .card_section {
+        display: flex;
+        justify-content: center;
+    }
+    .product-card {
+        width: 100%;
     }
 }

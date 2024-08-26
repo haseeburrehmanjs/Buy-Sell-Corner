@@ -10,11 +10,11 @@ let loginBtn = document.querySelector("#loginBtn")
 // get input value and check user login
 form.addEventListener('submit', event => {
     event.preventDefault()
+    loginBtn.innerHTML = `<img class="loading" src="./Assets/Images/load-37_256.gif" alt="">`
 
     // sign in function 
     signInWithEmailAndPassword(auth, email.value, password.value)
     .then((userCredential) => {
-        loginBtn.innerHTML = `<img class="loading" src="./Assets/Images/load-37_256.gif" alt="">`
         const user = userCredential.user;
         console.log(user);
         Swal.fire({

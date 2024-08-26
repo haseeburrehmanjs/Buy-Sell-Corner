@@ -5,43 +5,59 @@ import { auth, db } from "../config.js";
 // use html element in javascript
 let logoutBtn = document.querySelector('#logoutBtn')
 let userIcon = document.querySelector('#userIcon')
-let product_title = document.querySelector('#product_title')
-let user_image = document.querySelector('#user_image')
-let phone_number = document.querySelector('#phone_number')
-let userName = document.querySelector('#userName')
+let main_card_box = document.querySelector('.main_card_box')
 let main_product_head = document.querySelector('#main_product_head')
-let product_image = document.querySelector('#product_image')
-let whatsapp_btn = document.querySelector('#whatsapp_btn')
-let product_price = document.querySelector('#product_price')
-let product_description = document.querySelector('#product_description')
-
-whatsapp_btn.addEventListener('click', event => {
-    event.preventDefault()
-    Swal.fire({
-        title: 'Setting!',
-        text: 'whatsapp featuer is comming soon',
-        confirmButtonText: 'Close'
-    })
-        .then((result) => {
-            if (result.isConfirmed) {
-                // window.location = './postad.html'
-            }
-        });
-})
 
 let getData = JSON.parse(localStorage.getItem('sendlocal'))
 console.log(getData);
 
 function renderScreen(){
-    product_image.src = getData.productImage
-    product_title.innerHTML = getData.product_title
-    phone_number.innerHTML = getData.phone_number
-    userName.innerHTML = getData.UserName
     main_product_head.innerHTML = getData.product_title
-    product_price.innerHTML = getData.product_Price
-    product_description.innerHTML = getData.Product_Description
+   main_card_box.innerHTML = `
+   <div class="d-flex gap-5 flex-wrap">
+                <div class="main_card_image rounded-4">
+                    <img id="product_image" src="${getData.productImage}" alt="">
+                </div>
+                <div class="mt-3">
+                    <h3 id="product_price">Rs: ${getData.product_Price}</h3>
+                    <h3 class="mt-3" id="product_title">${getData.product_title}</h3>
+                    <p class="mt-2" id="product_description"><spna><h6> Description</h6></spna>${getData.Product_Description}</p>
+                    <div class="user_section rounded-4 mt-3 d-flex align-items-center gap-2">
+                        <div>
+                            <img id="user_image" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQOtu74pEiq7ofeQeTsco0migV16zZoBwSlGg&s" alt="">
+                        </div>
+                        <div class="mt-3">
+                            <h6 id="userName">${getData.UserName}</h6>
+                            <p id="phone_number">${getData.phone_number}</p>
+                        </div>
+                    </div>
+                    <div>
+                        <a href=""><button id="whatsapp_btn" class="btn btn-success mt-3">Whatsapp</button></a>
+                    </div>
+                </div>
+            </div>
+   `
 }
 renderScreen()
+
+let whatsapp_btn = document.querySelector('#whatsapp_btn')
+
+whatsapp_btn.addEventListener('click', event => {
+    event.preventDefault()
+    console.log('whatsapp');
+    Swal.fire({
+        title: 'Whatsapp!',
+        text: 'WhatsApp button is comming Soon!',
+        confirmButtonText: 'Ok',
+        // icon: 'error',
+    })
+        .then((result) => {
+            if (result.isConfirmed) {
+                // window.location = '../index.html'
+            }
+        });
+})
+
 
 
 // check user status user login or not
