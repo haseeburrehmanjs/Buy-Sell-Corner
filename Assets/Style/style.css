@@ -76,7 +76,7 @@ body a {
 }
 
 #search_input {
-    width: 83%;
+    width: 100%;
     height: 48px;
     border: 1px solid rgb(237, 237, 237);
     font-weight: 100;
@@ -251,7 +251,8 @@ body a {
 
 .main_card_box {
     width: 80%;
-    height: 400px;
+    /* height: 400px; */
+    /* padding: 10px; */
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
 

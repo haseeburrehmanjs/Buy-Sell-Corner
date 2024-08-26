@@ -14,7 +14,7 @@ console.log(getData);
 function renderScreen(){
     main_product_head.innerHTML = getData.product_title
    main_card_box.innerHTML = `
-   <div class="d-flex gap-5 flex-wrap">
+   <div class="d-flex justify-content-center gap-5 flex-wrap">
                 <div class="main_card_image rounded-4">
                     <img id="product_image" src="${getData.productImage}" alt="">
                 </div>
@@ -26,6 +26,7 @@ function renderScreen(){
                         <div>
                             <img id="user_image" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQOtu74pEiq7ofeQeTsco0migV16zZoBwSlGg&s" alt="">
                         </div>
+                        <hr />
                         <div class="mt-3">
                             <h6 id="userName">${getData.UserName}</h6>
                             <p id="phone_number">${getData.phone_number}</p>
